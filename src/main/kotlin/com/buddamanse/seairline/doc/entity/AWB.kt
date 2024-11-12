@@ -1,19 +1,19 @@
 package com.buddamanse.seairline.doc.entity
 
-import com.buddamanse.seairline.owner.entity.Owner
+import com.buddamanse.seairline.home.entity.Sender
 import jakarta.persistence.*
 import java.util.UUID
 
 @Entity
-class AWB(ownerId: UUID) {
+class AWB(senderId: UUID) {
     @Id
     var id: UUID = UUID.randomUUID()
 
     @Column
-    var ownerId: UUID = owner.id
+    var senderId: UUID = sender.id
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ownerId")
-    lateinit var owner: Owner
+    @JoinColumn(name = "senderId")
+    lateinit var sender: Sender
 
 }
