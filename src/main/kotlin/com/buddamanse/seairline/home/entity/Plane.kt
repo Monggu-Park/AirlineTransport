@@ -3,16 +3,12 @@ package com.buddamanse.seairline.home.entity
 import jakarta.persistence.*
 import java.util.UUID
 @Entity
-@Table(name = "customs_employees")
-data class CustomsEmployee (
+data class Plane (
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    val id: UUID = UUID.randomUUID(),
+    var id: UUID = UUID.randomUUID(),
 
-    @Column(nullable = false)
-    var name: String,
-
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(nullable = false)
-    var customs: Customs
+    val airline: Airline
 )
