@@ -16,7 +16,7 @@ data class AWB(
     var id: UUID = UUID.randomUUID(),
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(nullable = false, name = "sender_id")
     var sender: Sender,
 
     @ManyToOne
