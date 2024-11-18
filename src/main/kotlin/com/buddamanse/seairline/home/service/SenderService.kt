@@ -1,0 +1,26 @@
+package com.buddamanse.seairline.home.service
+
+import com.buddamanse.seairline.home.dto.SenderDTO
+import com.buddamanse.seairline.home.entity.Sender
+import com.buddamanse.seairline.home.repository.SenderRepository
+import org.springframework.stereotype.Service
+
+@Service
+class SenderService (
+    private val senderRepository: SenderRepository
+) {
+    fun getSender(customId: String): SenderDTO {
+        return senderRepository.findByCustomId(customId).orElseThrow {
+            throw IllegalArgumentException("$customId not found")
+        }
+    }
+   fun createSender(senderDTO: SenderDTO): Sender {
+       val sender = Sender(
+           customId = senderDTO.customId,
+           name = senderDTO.name,
+           address = senderDTO.address,
+           phoneNumber = senderDTO.phoneNumber
+       )
+       return senderRepository.save(sender)
+   }
+}
