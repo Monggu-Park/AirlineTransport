@@ -8,6 +8,9 @@ data class AirlineEmployees (
     @GeneratedValue(strategy = GenerationType.UUID)
     val id: UUID = UUID.randomUUID(),
 
+    @Column(nullable = false, unique = true)
+    var customId: String,
+
     @Column(nullable = false)
     var name: String,
 

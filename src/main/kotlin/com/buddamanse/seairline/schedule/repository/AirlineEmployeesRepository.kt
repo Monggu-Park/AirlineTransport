@@ -6,4 +6,5 @@ import java.util.UUID
 
 interface AirlineEmployeesRepository :JpaRepository<AirlineEmployees, UUID> {
     fun findAllByAirlineId(airlineId: UUID): List<AirlineEmployees>
+    fun findByCustomId(customId: String): AirlineEmployees
 }
