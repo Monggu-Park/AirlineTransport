@@ -4,7 +4,6 @@ import jakarta.persistence.*
 import java.util.UUID
 
 @Entity
-@Table(name = "customs")
 data class Customs (
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

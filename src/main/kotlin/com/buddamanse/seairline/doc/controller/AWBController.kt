@@ -18,7 +18,13 @@ class AWBController (
     private val awbService: AWBService
 ){
     @GetMapping("/")
-    fun getAWB(@RequestParam customId: String): ResponseEntity<AWBDTO> {
+    fun getAllAWB(): ResponseEntity<List<AWB>> {
+        val awbs = awbService.getAllAWB()
+        return ResponseEntity(awbs, HttpStatus.OK)
+    }
+
+    @GetMapping("/")
+    fun getAWB(@RequestParam customId: String): ResponseEntity<AWB> {
         val getAWB = awbService.getAWB(customId)
         return ResponseEntity(getAWB, HttpStatus.OK)
     }

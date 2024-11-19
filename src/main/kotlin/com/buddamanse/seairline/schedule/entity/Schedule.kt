@@ -1,8 +1,5 @@
 package com.buddamanse.seairline.schedule.entity
 
-import com.buddamanse.seairline.home.entity.AirlineEmployees
-import com.buddamanse.seairline.home.entity.Airport
-import com.buddamanse.seairline.home.entity.Plane
 import jakarta.persistence.*
 import jdk.jfr.Timestamp
 import java.time.LocalDateTime
@@ -18,11 +15,11 @@ data class Schedule (
     var plane: Plane,
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(nullable = false, name = "departure_airport_id")
     var departureAirport: Airport,
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(nullable = false, name = "arrival_airport_id")
     var arrivalAirport: Airport,
 
     @Column(nullable = false)

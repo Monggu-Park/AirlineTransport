@@ -24,8 +24,8 @@ data class AWB(
     var cargo: Cargo,
 
     @OneToOne
-    @JoinColumn(nullable = false)
-    var schedule: Schedule,
+    @JoinColumn
+    var schedule: Schedule? = null,
 
     @Column(nullable = false)
     var receiverName: String,
@@ -36,8 +36,8 @@ data class AWB(
     @Column(nullable = false)
     var receiverTel: String,
 
-    @Column(nullable = false)
-    var isValid: TinyIntJdbcType,
+    @Column(nullable = false, columnDefinition = "TINYINT(1)")
+    var isValid: Boolean = false,
 
     @Column(nullable = false)
     @Timestamp

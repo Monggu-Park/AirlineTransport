@@ -1,4 +1,4 @@
-package com.buddamanse.seairline.home.entity
+package com.buddamanse.seairline.schedule.entity
 
 import jakarta.persistence.*
 import java.util.UUID

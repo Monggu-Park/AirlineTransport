@@ -15,7 +15,7 @@ data class Cargo (
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    val status: CargoStatus,
+    var status: CargoStatus,
 
     @Column(nullable = false)
     val weight: Double,
@@ -27,4 +27,4 @@ data class Cargo (
     val height: Double,
 )
 
-enum class CargoStatus { Approved, Reject }
+enum class CargoStatus { Approved, Reject, Waiting }

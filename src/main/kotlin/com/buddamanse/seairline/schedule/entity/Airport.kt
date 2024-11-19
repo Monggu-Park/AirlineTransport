@@ -1,5 +1,6 @@
-package com.buddamanse.seairline.home.entity
+package com.buddamanse.seairline.schedule.entity
 
+import com.buddamanse.seairline.home.entity.Region
 import jakarta.persistence.*
 import java.util.UUID
 @Entity
