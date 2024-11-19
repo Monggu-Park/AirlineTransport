@@ -29,6 +29,10 @@ class CargoService (
         return updatedCargo
     }
 
+    fun getAllCargo(): List<Cargo> {
+        return cargoRepository.findAll()
+    }
+
     fun getCargo(id: UUID): Cargo {
         return cargoRepository.findCargoById(id).orElseThrow{
             throw IllegalArgumentException(" Cargo not found. ")

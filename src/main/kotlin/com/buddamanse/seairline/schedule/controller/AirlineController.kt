@@ -38,13 +38,13 @@ class AirlineController (
         val airports = airportService.getAllAirport()
         return ResponseEntity(airports, HttpStatus.OK)
     }
-    @GetMapping("/login")
+    @GetMapping("/employee/login")
     fun loginEmployee(@RequestParam customId: String): ResponseEntity<AirlineEmployees> {
         val airlineEmployees = airlineEmployeesService.getEmployee(customId)
         return ResponseEntity(airlineEmployees, HttpStatus.OK)
     }
 
-    @PostMapping("/registerEmployee")
+    @PostMapping("/employee/register")
     fun registerEmployee(@RequestBody airlineEmployeeDTO: AirlineEmployeeDTO): ResponseEntity<AirlineEmployees> {
         val registered = airlineEmployeesService.registerEmployee(airlineEmployeeDTO)
         return ResponseEntity(registered, HttpStatus.CREATED)
