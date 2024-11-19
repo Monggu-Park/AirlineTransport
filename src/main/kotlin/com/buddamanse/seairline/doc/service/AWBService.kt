@@ -11,7 +11,6 @@ import java.util.*
 @Service
 class AWBService(
     private val awbRepository: AWBRepository,
-    private val senderRepository: SenderRepository,
 ){
     fun createAWB(awbdto: AWBDTO): AWB {
         val awb = AWB(
@@ -34,6 +33,9 @@ class AWBService(
         awb.schedule = schedule
         awb.isValid = true
         return awbRepository.save(awb)
+    }
+    fun getAllAWB(): List<AWB> {
+        return awbRepository.findAll()
     }
 
     fun getAWB(customId: String): AWB {

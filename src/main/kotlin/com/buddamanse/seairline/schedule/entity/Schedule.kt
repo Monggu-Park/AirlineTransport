@@ -15,11 +15,11 @@ data class Schedule (
     var plane: Plane,
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(nullable = false, name = "departure_airport_id")
     var departureAirport: Airport,
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(nullable = false, name = "arrival_airport_id")
     var arrivalAirport: Airport,
 
     @Column(nullable = false)

@@ -9,7 +9,7 @@ import java.util.UUID
 class PlaneService (
     private val planeRepository: PlaneRepository
 ){
-    fun findAllPlanes(airlineId: UUID) : List<Plane> {
+    fun getAllPlanes(airlineId: UUID) : List<Plane> {
         return planeRepository.findAllByAirlineId(airlineId)
     }
 }
