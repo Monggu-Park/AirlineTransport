@@ -15,6 +15,6 @@ data class AWBDTO (
     var receiverName: String,
     var receiverAddress: String,
     var receiverTel: String,
-    var isValid: TinyIntJdbcType,
+    var isValid: Boolean,
     var createdAt: LocalDateTime
 )

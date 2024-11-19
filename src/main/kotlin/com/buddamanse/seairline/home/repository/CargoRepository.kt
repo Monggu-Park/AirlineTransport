@@ -9,5 +9,5 @@ import java.util.UUID
 
 @Repository
 interface CargoRepository : JpaRepository<Cargo, UUID> {
-    fun findCargoById(id: UUID): Optional<CargoDTO>
+    fun findCargoById(id: UUID): Optional<Cargo>
 }

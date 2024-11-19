@@ -2,6 +2,7 @@ package com.buddamanse.seairline.home.service
 
 import com.buddamanse.seairline.home.dto.CargoDTO
 import com.buddamanse.seairline.home.entity.Cargo
+import com.buddamanse.seairline.home.entity.CargoStatus
 import com.buddamanse.seairline.home.repository.CargoRepository
 import org.springframework.stereotype.Service
 import java.util.UUID
@@ -13,7 +14,7 @@ class CargoService (
     fun registerCargo(cargoDTO: CargoDTO): Cargo {
         val cargo = Cargo(
             description = cargoDTO.description,
-            status = cargoDTO.status,
+            status = CargoStatus.Waiting,
             weight = cargoDTO.weight,
             width = cargoDTO.width,
             height = cargoDTO.height
@@ -21,7 +22,14 @@ class CargoService (
         return cargoRepository.save(cargo)
     }
 
-    fun getCargo(id: UUID): CargoDTO {
+    fun changeStatus(cargoId: UUID, cargoStatus: CargoStatus): Cargo {
+        val cargo = getCargo(cargoId)
+        cargo.status = cargoStatus
+        val updatedCargo = cargoRepository.save(cargo)
+        return updatedCargo
+    }
+
+    fun getCargo(id: UUID): Cargo {
         return cargoRepository.findCargoById(id).orElseThrow{
             throw IllegalArgumentException(" Cargo not found. ")
         }

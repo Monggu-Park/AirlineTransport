@@ -1,9 +1,9 @@
-package com.buddamanse.seairline.home.entity
+package com.buddamanse.seairline.schedule.entity
 
 import jakarta.persistence.*
 import java.util.UUID
 @Entity
-data class Airport (
+data class AirlineEmployees (
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     val id: UUID = UUID.randomUUID(),
@@ -11,7 +11,13 @@ data class Airport (
     @Column(nullable = false)
     var name: String,
 
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    var airline: Airline,
+
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    var region: Region
+    var role: Role
 )
+
+enum class Role { Administrator, Captain }
