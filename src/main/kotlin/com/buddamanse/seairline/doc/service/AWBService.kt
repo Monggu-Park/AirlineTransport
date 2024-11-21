@@ -5,6 +5,7 @@ import com.buddamanse.seairline.doc.entity.AWB
 import com.buddamanse.seairline.doc.repository.AWBRepository
 import com.buddamanse.seairline.home.repository.SenderRepository
 import com.buddamanse.seairline.schedule.entity.Schedule
+import jakarta.transaction.Transactional
 import org.springframework.stereotype.Service
 import java.util.*
 
@@ -12,6 +13,7 @@ import java.util.*
 class AWBService(
     private val awbRepository: AWBRepository,
 ){
+    @Transactional
     fun createAWB(awbdto: AWBDTO): AWB {
         val awb = AWB(
             sender = awbdto.sender,
@@ -26,13 +28,14 @@ class AWBService(
         return awbRepository.save(awb)
     }
 
+    @Transactional
     fun assignSchedule(id: UUID, schedule: Schedule): AWB {
         val awb = awbRepository.findById(id).orElseThrow{
             throw IllegalArgumentException("AWB not found")
         }
         awb.schedule = schedule
         awb.isValid = true
-        return awbRepository.save(awb)
+        return awb
     }
     fun getAllAWB(): List<AWB> {
         return awbRepository.findAll()

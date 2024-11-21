@@ -6,6 +6,7 @@ import com.buddamanse.seairline.schedule.repository.AirlineEmployeesRepository
 import com.buddamanse.seairline.schedule.repository.AirportRepository
 import com.buddamanse.seairline.schedule.repository.PlaneRepository
 import com.buddamanse.seairline.schedule.repository.ScheduleRepository
+import jakarta.transaction.Transactional
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
 import java.util.*
@@ -27,6 +28,11 @@ class ScheduleService (
         }
     }
 
+    fun getAllScheduleByEmployeeId(employeeId: UUID): List<Schedule> {
+        return scheduleRepository.findAllByAirlineEmployeesId(employeeId)
+    }
+
+    @Transactional
     fun registerSchedule(scheduleDTO: ScheduleDTO): Schedule {
         val plane = planeRepository.findById(scheduleDTO.planeId)
             .orElseThrow{ IllegalArgumentException("Plane not found with id: ${scheduleDTO.planeId}") }

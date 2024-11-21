@@ -4,6 +4,7 @@ import com.buddamanse.seairline.home.dto.CargoDTO
 import com.buddamanse.seairline.home.entity.Cargo
 import com.buddamanse.seairline.home.entity.CargoStatus
 import com.buddamanse.seairline.home.repository.CargoRepository
+import jakarta.transaction.Transactional
 import org.springframework.stereotype.Service
 import java.util.UUID
 
@@ -11,6 +12,7 @@ import java.util.UUID
 class CargoService (
     private val cargoRepository: CargoRepository
 ){
+    @Transactional
     fun registerCargo(cargoDTO: CargoDTO): Cargo {
         val cargo = Cargo(
             description = cargoDTO.description,
@@ -22,11 +24,11 @@ class CargoService (
         return cargoRepository.save(cargo)
     }
 
+    @Transactional
     fun changeStatus(cargoId: UUID, cargoStatus: CargoStatus): Cargo {
         val cargo = getCargo(cargoId)
         cargo.status = cargoStatus
-        val updatedCargo = cargoRepository.save(cargo)
-        return updatedCargo
+        return cargo
     }
 
     fun getAllCargo(): List<Cargo> {

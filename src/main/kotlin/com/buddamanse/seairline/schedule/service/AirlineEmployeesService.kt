@@ -3,6 +3,7 @@ package com.buddamanse.seairline.schedule.service
 import com.buddamanse.seairline.schedule.dto.AirlineEmployeeDTO
 import com.buddamanse.seairline.schedule.entity.AirlineEmployees
 import com.buddamanse.seairline.schedule.repository.AirlineEmployeesRepository
+import jakarta.transaction.Transactional
 import org.springframework.stereotype.Service
 import java.util.UUID
 
@@ -17,7 +18,7 @@ class AirlineEmployeesService (
     fun getEmployee(customId: String): AirlineEmployees {
         return airlineEmployeesRepository.findByCustomId(customId)
     }
-
+    @Transactional
     fun registerEmployee(airlineEmployeeDTO: AirlineEmployeeDTO): AirlineEmployees {
         val employee = AirlineEmployees(
             customId = airlineEmployeeDTO.customId,
