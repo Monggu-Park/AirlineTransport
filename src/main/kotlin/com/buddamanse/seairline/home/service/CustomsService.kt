@@ -5,6 +5,7 @@ import com.buddamanse.seairline.home.entity.Customs
 import com.buddamanse.seairline.home.entity.CustomsEmployee
 import com.buddamanse.seairline.home.repository.CustomsEmployeeRepository
 import com.buddamanse.seairline.home.repository.CustomsRepository
+import jakarta.transaction.Transactional
 import org.springframework.stereotype.Service
 
 @Service
@@ -21,6 +22,7 @@ class CustomsService (
     fun getCustomsEmployee(customId: String): CustomsEmployee {
         return customsEmployeeRepository.findByCustomId(customId)
     }
+    @Transactional
     fun registerCustomsEmployee(customsEmployeeDTO: CustomsEmployeeDTO): CustomsEmployee {
         val customs = customsRepository.findById(customsEmployeeDTO.customsId)
             .orElseThrow{ IllegalArgumentException("Customs not found with id: ${customsEmployeeDTO.customId}") }

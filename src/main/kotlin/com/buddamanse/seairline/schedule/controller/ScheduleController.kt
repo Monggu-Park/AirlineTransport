@@ -33,5 +33,10 @@ class ScheduleController (
         val assigned = awbService.assignSchedule(awbId, schedule)
         return ResponseEntity(assigned, HttpStatus.CREATED)
     }
+    @GetMapping("/employee-worked")
+    fun getEmployeeWorkedSchedule(@RequestParam employeeId: UUID): ResponseEntity<List<Schedule>> {
+        val schedules = scheduleService.getAllScheduleByEmployeeId(employeeId)
+        return ResponseEntity(schedules, HttpStatus.OK)
+    }
 
 }
