@@ -1,6 +1,9 @@
 package com.buddamanse.seairline.schedule.controller
 
+import com.buddamanse.seairline.schedule.dto.AirlineDTO
 import com.buddamanse.seairline.schedule.dto.AirlineEmployeeDTO
+import com.buddamanse.seairline.schedule.dto.AirportDTO
+import com.buddamanse.seairline.schedule.dto.PlaneDTO
 import com.buddamanse.seairline.schedule.entity.Airline
 import com.buddamanse.seairline.schedule.entity.AirlineEmployees
 import com.buddamanse.seairline.schedule.entity.Airport
@@ -28,15 +31,33 @@ class AirlineController (
         val airlines = airlineService.getAllAirlines()
         return ResponseEntity(airlines, HttpStatus.OK)
     }
+
+    @PostMapping("/register")
+    fun registerAirline(@RequestBody airlineDTO: AirlineDTO): ResponseEntity<Airline> {
+        val airline = airlineService.registerAirline(airlineDTO)
+        return ResponseEntity(airline, HttpStatus.CREATED)
+    }
+
     @GetMapping("/planes")
     fun getPlane(@RequestParam airlineId: UUID): ResponseEntity<List<Plane>> {
         val planes = planeService.getAllPlanes(airlineId)
         return ResponseEntity(planes, HttpStatus.OK)
     }
+    @PostMapping("/plane/register")
+    fun registerPlane(@RequestBody planeDTO: PlaneDTO): ResponseEntity<Plane> {
+        val plane = planeService.registerPlane(planeDTO)
+        return ResponseEntity(plane, HttpStatus.CREATED)
+    }
+
     @GetMapping("/airports")
     fun getAirport(): ResponseEntity<List<Airport>> {
         val airports = airportService.getAllAirport()
         return ResponseEntity(airports, HttpStatus.OK)
+    }
+    @PostMapping("/airports/register")
+    fun registerAirport(@RequestBody airportDTO: AirportDTO): ResponseEntity<Airport> {
+        val airport = airportService.registerAirport(airportDTO)
+        return ResponseEntity(airport, HttpStatus.CREATED)
     }
     @GetMapping("/employee/login")
     fun loginEmployee(@RequestParam customId: String): ResponseEntity<AirlineEmployees> {

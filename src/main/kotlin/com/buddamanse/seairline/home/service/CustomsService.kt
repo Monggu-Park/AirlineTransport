@@ -1,8 +1,10 @@
 package com.buddamanse.seairline.home.service
 
+import com.buddamanse.seairline.home.dto.CustomsDTO
 import com.buddamanse.seairline.home.dto.CustomsEmployeeDTO
 import com.buddamanse.seairline.home.entity.Customs
 import com.buddamanse.seairline.home.entity.CustomsEmployee
+import com.buddamanse.seairline.home.entity.Region
 import com.buddamanse.seairline.home.repository.CustomsEmployeeRepository
 import com.buddamanse.seairline.home.repository.CustomsRepository
 import jakarta.transaction.Transactional
@@ -21,6 +23,13 @@ class CustomsService (
     }
     fun getCustomsEmployee(customId: String): CustomsEmployee {
         return customsEmployeeRepository.findByCustomId(customId)
+    }
+    @Transactional
+    fun registerCustoms(customsDTO: CustomsDTO): Customs {
+        val registered = Customs(
+            region = customsDTO.region
+        )
+        return customsRepository.save(registered)
     }
     @Transactional
     fun registerCustomsEmployee(customsEmployeeDTO: CustomsEmployeeDTO): CustomsEmployee {

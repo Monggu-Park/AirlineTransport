@@ -18,7 +18,7 @@ class SenderController (
     private val senderService: SenderService
 ){
     @GetMapping("/")
-    fun getSender(@RequestParam customId: String): ResponseEntity<SenderDTO> {
+    fun getSender(@RequestParam customId: String): ResponseEntity<Sender> {
         val getSender = senderService.getSender(customId)
         return ResponseEntity(getSender, HttpStatus.OK)
     }

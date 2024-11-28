@@ -24,7 +24,7 @@ data class AWB(
     var cargo: Cargo,
 
     @OneToOne
-    @JoinColumn
+    @JoinColumn(nullable = true)
     var schedule: Schedule? = null,
 
     @Column(nullable = false)

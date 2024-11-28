@@ -4,26 +4,32 @@ import com.buddamanse.seairline.doc.dto.AWBDTO
 import com.buddamanse.seairline.doc.entity.AWB
 import com.buddamanse.seairline.doc.repository.AWBRepository
 import com.buddamanse.seairline.home.repository.SenderRepository
+import com.buddamanse.seairline.home.service.CargoService
 import com.buddamanse.seairline.schedule.entity.Schedule
 import jakarta.transaction.Transactional
 import org.springframework.stereotype.Service
+import java.time.LocalDateTime
 import java.util.*
 
 @Service
 class AWBService(
     private val awbRepository: AWBRepository,
+    private val senderRepository: SenderRepository,
+    private val cargoService: CargoService,
 ){
     @Transactional
-    fun createAWB(awbdto: AWBDTO): AWB {
+    fun createAWB(awbDto: AWBDTO): AWB {
+        val sender = senderRepository.findByCustomId(awbDto.senderId).orElseThrow()
+        val cargo = cargoService.registerCargo(awbDto.cargo)
         val awb = AWB(
-            sender = awbdto.sender,
-            cargo = awbdto.cargo,
+            sender = sender,
+            cargo = cargo,
             schedule = null,
-            receiverName = awbdto.receiverName,
-            receiverAddress = awbdto.receiverAddress,
-            receiverTel = awbdto.receiverTel,
+            receiverName = awbDto.receiverName,
+            receiverAddress = awbDto.receiverAddress,
+            receiverTel = awbDto.receiverTel,
             isValid = false,
-            createdAt = awbdto.createdAt
+            createdAt = LocalDateTime.now()
         )
         return awbRepository.save(awb)
     }

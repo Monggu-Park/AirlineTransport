@@ -13,5 +13,4 @@ data class ScheduleDTO (
     var departureTime: LocalDateTime,
     var arrivalTime: LocalDateTime,
     var airlineEmployeesId: UUID,
-    var createdDateTime: LocalDateTime
 )
