@@ -30,11 +30,13 @@
 
 ## 다이어그램
 - Use Case
-  ![image](https://github.com/user-attachments/assets/1b4312d1-ec13-44aa-b94b-cb80307c5e28)
+<br>![image](https://github.com/user-attachments/assets/1b4312d1-ec13-44aa-b94b-cb80307c5e28)<br>
 - Class
-
+<br><img width="451" alt="그림1" src="https://github.com/user-attachments/assets/6826d93e-a2de-4ead-8c55-bfbcfbf2997c"><br>
 - Sequence
+<br>![image](https://github.com/user-attachments/assets/68ab9a01-395e-4677-86b8-01c3eae9c31b)<br>
 - ER
+  <br><img width="452" alt="image" src="https://github.com/user-attachments/assets/b93af59f-a7cc-478c-9e39-8b044ad045eb"><br>
 
 <br>   
 
