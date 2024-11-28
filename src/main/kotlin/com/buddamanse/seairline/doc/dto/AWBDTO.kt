@@ -1,5 +1,6 @@
 package com.buddamanse.seairline.doc.dto
 
+import com.buddamanse.seairline.home.dto.CargoDTO
 import com.buddamanse.seairline.home.entity.Cargo
 import com.buddamanse.seairline.home.entity.Sender
 import com.buddamanse.seairline.schedule.entity.Schedule
@@ -8,13 +9,9 @@ import java.time.LocalDateTime
 import java.util.UUID
 
 data class AWBDTO (
-    var id: UUID ?= null,
-    var sender: Sender,
-    var cargo: Cargo,
-    var schedule: Schedule,
+    var senderId: String,
+    var cargo: CargoDTO,
     var receiverName: String,
     var receiverAddress: String,
     var receiverTel: String,
-    var isValid: Boolean,
-    var createdAt: LocalDateTime
 )

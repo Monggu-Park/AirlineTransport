@@ -9,5 +9,5 @@ import java.util.UUID
 
 @Repository
 interface SenderRepository : JpaRepository<Sender, UUID> {
-    fun findByCustomId(customId: String): Optional<SenderDTO>
+    fun findByCustomId(customId: String): Optional<Sender>
 }

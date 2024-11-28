@@ -1,8 +1,10 @@
 package com.buddamanse.seairline.home.controller
 
+import com.buddamanse.seairline.home.dto.CustomsDTO
 import com.buddamanse.seairline.home.dto.CustomsEmployeeDTO
 import com.buddamanse.seairline.home.entity.Customs
 import com.buddamanse.seairline.home.entity.CustomsEmployee
+import com.buddamanse.seairline.home.entity.Region
 import com.buddamanse.seairline.home.service.CustomsService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -23,6 +25,12 @@ class CustomsController (
     fun getAllCustoms(): ResponseEntity<List<Customs>> {
         val customs = customsService.getAllCustoms()
         return ResponseEntity(customs, HttpStatus.OK)
+    }
+    @PostMapping("/register")
+    fun registerCustoms(@RequestBody customsDTO: CustomsDTO): ResponseEntity<Customs> {
+
+        val customs = customsService.registerCustoms(customsDTO)
+        return ResponseEntity(customs, HttpStatus.CREATED)
     }
     @GetMapping("/employee")
     fun getAllCustomsEmployee(): ResponseEntity<List<CustomsEmployee>> {

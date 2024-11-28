@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service
 class SenderService (
     private val senderRepository: SenderRepository
 ) {
-    fun getSender(customId: String): SenderDTO {
+    fun getSender(customId: String): Sender {
         return senderRepository.findByCustomId(customId).orElseThrow {
             throw IllegalArgumentException("$customId not found")
         }
