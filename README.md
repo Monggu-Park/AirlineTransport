@@ -30,7 +30,9 @@
 
 ## 다이어그램
 - Use Case
+  ![image](https://github.com/user-attachments/assets/1b4312d1-ec13-44aa-b94b-cb80307c5e28)
 - Class
+
 - Sequence
 - ER
 
