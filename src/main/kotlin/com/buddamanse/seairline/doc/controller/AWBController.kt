@@ -24,7 +24,7 @@ class AWBController (
     }
 
     @GetMapping("/custom")
-    fun getAWB(@RequestParam customId: String): ResponseEntity<AWB> {
+    fun getAWB(@RequestParam customId: String): ResponseEntity<List<AWB>> {
         val getAWB = awbService.getAWB(customId)
         return ResponseEntity(getAWB, HttpStatus.OK)
     }
