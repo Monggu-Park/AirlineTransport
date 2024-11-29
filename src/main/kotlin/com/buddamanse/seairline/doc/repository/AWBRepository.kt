@@ -11,5 +11,5 @@ import java.util.UUID
 
 @Repository
 interface AWBRepository: JpaRepository<AWB, UUID> {
-    fun findAWBBySender_CustomId(customId: String): Optional<AWB>
+    fun findAWBBySender_CustomId(customId: String): List<AWB>
 }

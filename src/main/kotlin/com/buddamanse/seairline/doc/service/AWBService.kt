@@ -47,9 +47,7 @@ class AWBService(
         return awbRepository.findAll()
     }
 
-    fun getAWB(customId: String): AWB {
-        return awbRepository.findAWBBySender_CustomId(customId).orElseThrow {
-            throw IllegalArgumentException("$customId never wrote AWB")
-        }
+    fun getAWB(customId: String): List<AWB> {
+        return awbRepository.findAWBBySender_CustomId(customId)
     }
 }
