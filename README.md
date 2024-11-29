@@ -92,9 +92,6 @@
 - [🚗 Server](https://github.com/Monggu-Park/AirlineTransport)
 - [🙋‍♂️ UI/UX](https://github.com/Monggu-Park/AirlineTransportFront)
 
-### Image link
-![onealog](/assets/readme/easyme.png)
-
 <br>   
 
 
