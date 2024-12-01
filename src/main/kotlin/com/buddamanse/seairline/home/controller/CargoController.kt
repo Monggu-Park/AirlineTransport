@@ -32,7 +32,7 @@ class CargoController (
     }
 
     @PostMapping("/changeStatus")
-    fun changeStatus(@RequestParam cargoId: UUID, @RequestParam cargoStatus: CargoStatus): ResponseEntity<Cargo> {
+    fun changeStatus(@RequestParam cargoId: String, @RequestParam cargoStatus: CargoStatus): ResponseEntity<Cargo> {
         val changedCargo = cargoService.changeStatus(cargoId, cargoStatus)
         return ResponseEntity(changedCargo, HttpStatus.OK)
     }

@@ -25,8 +25,9 @@ class CargoService (
     }
 
     @Transactional
-    fun changeStatus(cargoId: UUID, cargoStatus: CargoStatus): Cargo {
-        val cargo = getCargo(cargoId)
+    fun changeStatus(cargoId: String, cargoStatus: CargoStatus): Cargo {
+        val cargoIdUUID = UUID.fromString(cargoId)
+        val cargo = getCargo(cargoIdUUID)
         cargo.status = cargoStatus
         return cargo
     }

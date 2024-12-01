@@ -35,8 +35,9 @@ class AWBService(
     }
 
     @Transactional
-    fun assignSchedule(id: UUID, schedule: Schedule): AWB {
-        val awb = awbRepository.findById(id).orElseThrow{
+    fun assignSchedule(id: String, schedule: Schedule): AWB {
+        val idToUUID = UUID.fromString(id)
+        val awb = awbRepository.findById(idToUUID).orElseThrow{
             throw IllegalArgumentException("AWB not found")
         }
         awb.schedule = schedule

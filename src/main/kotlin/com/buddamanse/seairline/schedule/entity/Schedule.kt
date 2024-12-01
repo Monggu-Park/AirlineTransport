@@ -28,7 +28,7 @@ data class Schedule (
     @Column(nullable = false)
     var arrivalTime: LocalDateTime,
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(nullable = false)
     var airlineEmployees: AirlineEmployees,
 

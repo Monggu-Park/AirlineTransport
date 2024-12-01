@@ -39,7 +39,7 @@ class AirlineController (
     }
 
     @GetMapping("/planes")
-    fun getPlane(@RequestParam airlineId: UUID): ResponseEntity<List<Plane>> {
+    fun getPlane(@RequestParam airlineId: String): ResponseEntity<List<Plane>> {
         val planes = planeService.getAllPlanes(airlineId)
         return ResponseEntity(planes, HttpStatus.OK)
     }

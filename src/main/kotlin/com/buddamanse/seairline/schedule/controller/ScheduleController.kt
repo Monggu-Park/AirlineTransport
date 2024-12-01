@@ -28,7 +28,7 @@ class ScheduleController (
     }
 
     @PostMapping("/register")
-    fun registerSchedule(@RequestParam awbId: UUID, @RequestBody scheduleDTO: ScheduleDTO): ResponseEntity<AWB> {
+    fun registerSchedule(@RequestParam awbId: String, @RequestBody scheduleDTO: ScheduleDTO): ResponseEntity<AWB> {
         val schedule = scheduleService.registerSchedule(scheduleDTO)
         val assigned = awbService.assignSchedule(awbId, schedule)
         return ResponseEntity(assigned, HttpStatus.CREATED)

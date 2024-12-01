@@ -13,8 +13,9 @@ class PlaneService (
     private val planeRepository: PlaneRepository,
     private val airlineRepository: AirlineRepository
 ){
-    fun getAllPlanes(airlineId: UUID) : List<Plane> {
-        return planeRepository.findAllByAirlineId(airlineId)
+    fun getAllPlanes(airlineId: String) : List<Plane> {
+        val airlineIdUUID = UUID.fromString(airlineId)
+        return planeRepository.findAllByAirlineId(airlineIdUUID)
     }
 
     @Transactional
