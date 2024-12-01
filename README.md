@@ -41,20 +41,17 @@
   <img width="2044" alt="스크린샷 2024-12-01 오후 5 29 52" src="https://github.com/user-attachments/assets/86220e8c-9ce5-463e-aaab-d93c905db59f">
 
 - 내 배송 현황
+  <img width="2044" alt="스크린샷 2024-12-01 오후 8 54 20" src="https://github.com/user-attachments/assets/0528b647-d817-40c9-9869-101d81c86336">
 ## 세관 물류 심사
 - 세관 직원 페이지
 <img width="2044" alt="스크린샷 2024-12-01 오후 5 25 25" src="https://github.com/user-attachments/assets/d62ae338-7504-4ba0-8221-e9c9558a505d">
 <img width="2044" alt="스크린샷 2024-12-01 오후 5 25 34" src="https://github.com/user-attachments/assets/40d7962e-e192-4d25-8f8a-631bedca0e07">
->>>>>>> Stashed changes
 
 ## 항공사 스케줄 관리
-### Table of contents
-1. [title1](#write-title-here!)
-2. [title2](#only-lowercase)
-3. [title3](#use"-"instead-of-spacing-words)
-4. [title4](#example)
-    - [❓ EASYME.md가 뭐예요?](#-easymemd가-뭐예요)
-    - [🛠 기능 엿보기](#-기능-엿보기)
+- 항공사 직원 페이지
+<img width="2044" alt="스크린샷 2024-12-01 오후 8 54 42" src="https://github.com/user-attachments/assets/216722c7-1d24-4bdd-8b66-14c0a4cac5ee">
+<img width="2044" alt="스크린샷 2024-12-01 오후 8 55 05" src="https://github.com/user-attachments/assets/dadf8e00-1712-4b8e-a478-68873706e2a4">
+
 
 ## Link
 ### General link
