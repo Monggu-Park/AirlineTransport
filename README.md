@@ -26,8 +26,6 @@
 3. [세관 물류 심사](#세관-물류-심사)
 4. [항공사 스케줄 관리](#항공사-스케줄-관리)
 
-<br>
-
 ## 다이어그램
 - Use Case
 <br>![image](https://github.com/user-attachments/assets/1b4312d1-ec13-44aa-b94b-cb80307c5e28)<br>
@@ -37,32 +35,17 @@
 <br>![image](https://github.com/user-attachments/assets/68ab9a01-395e-4677-86b8-01c3eae9c31b)<br>
 - ER
   <br><img width="452" alt="image" src="https://github.com/user-attachments/assets/b93af59f-a7cc-478c-9e39-8b044ad045eb"><br>
-
-<br>   
-
 ## 해외 물류 배송 등록
-- **진하게** (`Ctrl(Command) + B`)
-- *기울이기* (`Ctrl(Command) + I`)
-- <s>취소선</s> (`Ctrl(Command) + D`)
-- <u>밑줄</u> (`Ctrl(Command) + U`)
+- 배송 등록
+  <img width="2044" alt="스크린샷 2024-12-01 오후 5 29 23" src="https://github.com/user-attachments/assets/a1dc4aae-d820-49cf-b0af-1a158266f842">
+  <img width="2044" alt="스크린샷 2024-12-01 오후 5 29 52" src="https://github.com/user-attachments/assets/86220e8c-9ce5-463e-aaab-d93c905db59f">
 
-<br>   
-
+- 내 배송 현황
 ## 세관 물류 심사
-
->인용문
-
-<details><summary>접고 펴는 기능
-</summary>
-
-*Write here!*
-</details>
-
-- EASYME.md를 드래그하고 상단에 `Aa` 아이콘을 누르면? 👉 Easyme.md
-- EASYME.md를 드래그하고 상단에 `A` 아이콘을 누르면? 👉 EASYME.MD
-- EASYME.md를 드래그하고 상단에 `a` 아이콘을 누르면? 👉 easyme.md
-
-<br>
+- 세관 직원 페이지
+<img width="2044" alt="스크린샷 2024-12-01 오후 5 25 25" src="https://github.com/user-attachments/assets/d62ae338-7504-4ba0-8221-e9c9558a505d">
+<img width="2044" alt="스크린샷 2024-12-01 오후 5 25 34" src="https://github.com/user-attachments/assets/40d7962e-e192-4d25-8f8a-631bedca0e07">
+>>>>>>> Stashed changes
 
 ## 항공사 스케줄 관리
 ### Table of contents
@@ -73,25 +56,8 @@
     - [❓ EASYME.md가 뭐예요?](#-easymemd가-뭐예요)
     - [🛠 기능 엿보기](#-기능-엿보기)
 
-### Unordered list
-- unordered list1
-- unordered list2
-- unordered list3
-- unordered list4
-
-### Ordered list
-1. ordered list1
-2. ordered list2
-3. ordered list3
-4. ordered list4
-
-<br>   
-
 ## Link
 ### General link
 - [🚗 Server](https://github.com/Monggu-Park/AirlineTransport)
 - [🙋‍♂️ UI/UX](https://github.com/Monggu-Park/AirlineTransportFront)
-
-<br>   
-
 
